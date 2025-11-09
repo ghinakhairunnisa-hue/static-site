@@ -1,26 +1,1666 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>My Static Site</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-  </head>
-  <body>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Learning - ghinaknisa</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #ffe6f2 0%, #ffd1dc 100%);
+        color: #4a4a4a;
+        line-height: 1.7;
+        padding-top: 5rem;
+    }
+
+    header {
+        background: #ffe0ec;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        padding: 1rem 2rem;
+        text-align: center;
+        border-bottom: 3px solid #ffb3d9;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    header h1 {
+        color: #ff5fa2;
+        font-size: 2rem;
+        margin-bottom: 0.3rem;
+    }
+
+    header p {
+        color: #666;
+        font-size: 1rem;
+    }
+
+    nav {
+        margin-top: 0.6rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        background: #ffbad6;
+        color: #444;
+        padding: 0.4rem 0.9rem;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: 0.2s;
+    }
+
+    nav a:hover {
+        background: #ff8fc6;
+        color: white;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 1rem;
+    }
+
+    .section {
+        background: #fff0f5; /* soft pinkish-rose background */
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+    }
+
+    .section h2 {
+        color: #ff5fa2;
+        border-left: 5px solid #ff99cc;
+        padding-left: 10px;
+        margin-bottom: 1rem;
+    }
+
+    .section h3 {
+        color: #ff7db5;
+        margin: 1rem 0 0.5rem;
+    }
+
+    .code-block {
+        background: #ffeaf2;
+        border-left: 4px solid #ffb3d9;
+        padding: 1rem;
+        border-radius: 5px;
+        font-family: 'Courier New', monospace;
+        overflow-x: auto;
+        margin: 1rem 0;
+    }
+
+    .example-box {
+        background: #ffe3ec;
+        border: 1.5px solid #ffb6d9;
+        border-radius: 10px;
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+
+    .demo-output {
+        background: #fff7fa;
+        border: 2px dashed #ffcce0;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+    }
+
+    .important {
+        background: #ffd9e6;
+        border-left: 4px solid #ff80bf;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+    }
+
+    button {
+        background: #ff8fc6;
+        border: none;
+        border-radius: 20px;
+        padding: 0.8rem 1.5rem;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        background: #ff6bad;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+    }
+
+    th, td {
+        border: 2px solid #ffb6d9;
+        padding: 0.6rem;
+        text-align: left;
+    }
+
+    th {
+        background: #ff8fc6;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background: #ffeaf1;
+    }
+
+    footer {
+        text-align: center;
+        padding: 2rem 1rem;
+        background: #ffe0ec;
+        border-top: 3px solid #ffb3d9;
+        margin-top: 3rem;
+        color: #666;
+    }
+</style>
+
+
+</head>
+<body>
     <header>
-      <h1>Welcome — Static HTML + Nginx + Docker</h1>
-      <p>This site is served by an Nginx container on Docker Desktop.</p>
+        <h1>HTML Learning <3</h1>
+        <p style="text-align: center; color: #666; font-size: 1.2rem;">Panduan Lengkap & Interaktif untuk Belajar HTML dari Dasar</p>
+        <nav>
+            <a href="#struktur">1. Struktur Dasar</a>
+            <a href="#teks">2. Elemen Teks</a>
+            <a href="#navigasi">3. Navigasi</a>
+            <a href="#heading">4. Heading</a>
+            <a href="#pemisah">5. Pemisah</a>
+            <a href="#list">6. List</a>
+            <a href="#format">7. Format Teks</a>
+            <a href="#quote">8. Quote & Abbr</a>
+            <a href="#entities">9. Entities</a>
+            <a href="#details">10. Details</a>
+            <a href="#multimedia">11. Multimedia</a>
+            <a href="#tabel">12. Tabel</a>
+            <a href="#form">13. Form</a>
+            <a href="#frameset">14. Frameset</a>
+        </nav>
     </header>
-    <!-- asdada -->
-    <main>
-      <section class="card">
-        <h2>Assignment Demo</h2>
-        <p>Everyone can open the public link (provided by a tunnel) to see this page.</p>
-      </section>
-    </main>
+
+    <div class="container">
+        <!-- SECTION 1: STRUKTUR DASAR -->
+        <section id="struktur" class="section">
+            <h2>📋 1. Struktur Dasar HTML</h2>
+            
+            <div class="important">
+                <strong>⚠️ Penting:</strong> Setiap dokumen HTML harus memiliki struktur dasar ini!
+            </div>
+            
+            <div class="code-block">
+&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="id"&gt;<br>
+&nbsp;&nbsp;&lt;head&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Judul Halaman&lt;/title&gt;<br>
+&nbsp;&nbsp;&lt;/head&gt;<br>
+&nbsp;&nbsp;&lt;body&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Konten di sini --&gt;<br>
+&nbsp;&nbsp;&lt;/body&gt;<br>
+&nbsp;&nbsp;&lt;footer&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Informasi footer di sini --&gt;<br>
+&nbsp;&nbsp;&lt;/footer&gt;<br>
+&lt;/html&gt;
+            </div>
+            
+            <h3>Penjelasan Setiap Bagian:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tag</th>
+                        <th>Fungsi</th>
+                        <th>Wajib?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>&lt;!DOCTYPE html&gt;</code></td>
+                        <td>Memberitahu browser ini adalah dokumen HTML5</td>
+                        <td>✅ Ya</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;html lang="id"&gt;</code></td>
+                        <td>Tag pembungkus utama, lang="id" untuk bahasa Indonesia</td>
+                        <td>✅ Ya</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;head&gt;</code></td>
+                        <td>Metadata yang tidak tampil di halaman (judul, encoding, CSS, dll)</td>
+                        <td>✅ Ya</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;meta charset="UTF-8"&gt;</code></td>
+                        <td>Encoding karakter agar semua simbol terbaca dengan benar</td>
+                        <td>✅ Ya</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;meta name="viewport"...&gt;</code></td>
+                        <td>Membuat halaman responsif di semua perangkat</td>
+                        <td>⚡ Sangat Direkomendasikan</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;title&gt;</code></td>
+                        <td>Judul yang muncul di tab browser</td>
+                        <td>✅ Ya</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;body&gt;</code></td>
+                        <td>Semua konten yang terlihat ada di sini</td>
+                        <td>✅ Ya</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;footer&gt;</code></td>
+                        <td>Informasi pendukung seperti copyright, kontak, kebijakan privasi</td>
+                        <td>❌ Opsional</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECTION 2: ELEMEN TEKS -->
+        <section id="teks" class="section">
+            <h2>📝 2. Elemen Teks & Container</h2>
+            
+            <h3>A. Paragraf &lt;p&gt; (Block Element)</h3>
+            <p><strong>Fungsi:</strong> Khusus untuk menampilkan paragraf teks. Browser otomatis kasih spasi di atas & bawah setiap paragraf.</p>
+            <div class="example-box">
+                <div class="code-block">
+&lt;p&gt;Ini paragraf pertama dengan spasi otomatis.&lt;/p&gt;<br>
+&lt;p&gt;Ini paragraf kedua, browser otomatis kasih jarak.&lt;/p&gt;
+                </div>
+                <div class="demo-output">
+                    <p>Ini paragraf pertama dengan spasi otomatis.</p>
+                    <p>Ini paragraf kedua, browser otomatis kasih jarak.</p>
+                </div>
+            </div>
+            
+            <h3>B. Span &lt;span&gt; (Inline Element)</h3>
+            <p><strong>Fungsi:</strong> Untuk styling teks kecil/pendek di dalam kalimat tanpa membuat baris baru.</p>
+            <div class="example-box">
+                <div class="code-block">
+&lt;p&gt;Saya suka &lt;span style="color:red; font-weight:bold"&gt;apel&lt;/span&gt; dan &lt;span style="color:orange"&gt;jeruk&lt;/span&gt;.&lt;/p&gt;
+                </div>
+                <div class="demo-output">
+                    <p>Saya suka <span style="color:red; font-weight:bold">apel</span> dan <span style="color:orange">jeruk</span>.</p>
+                </div>
+            </div>
+            
+            <h3>C. Div &lt;div&gt; (Block Container)</h3>
+            <p><strong>Fungsi:</strong> Wadah besar untuk mengelompokkan elemen lain, digunakan untuk membuat layout seperti sidebar, header, atau section.</p>
+            <div class="example-box">
+                <div class="code-block">
+&lt;div style="border:2px solid #667eea; padding:15px; background:#f0f0f0"&gt;<br>
+&nbsp;&nbsp;&lt;h3&gt;Judul Konten&lt;/h3&gt;<br>
+&nbsp;&nbsp;&lt;p&gt;Div adalah wadah untuk mengelompokkan elemen.&lt;/p&gt;<br>
+&lt;/div&gt;
+                </div>
+                <div class="demo-output">
+                    <div style="border:2px solid #667eea; padding:15px; background:#f0f0f0">
+                        <h3>Judul Konten</h3>
+                        <p>Div adalah wadah untuk mengelompokkan elemen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: NAVIGASI -->
+        <section id="navigasi" class="section">
+            <h2>🔗 3. Navigasi (Link/Hyperlink)</h2>
+            
+            <h3>Tag &lt;a&gt; (Anchor/Link)</h3>
+            <p><strong>Fungsi:</strong> Membuat hyperlink untuk navigasi ke halaman lain atau bagian dalam halaman yang sama.</p>
+            
+            <div class="code-block">
+&lt;!-- Link ke website lain --&gt;<br>
+&lt;a href="https://google.com"&gt;Ke Google&lt;/a&gt;<br><br>
+&lt;!-- Link buka di tab baru --&gt;<br>
+&lt;a href="https://youtube.com" target="_blank"&gt;YouTube (Tab Baru)&lt;/a&gt;<br><br>
+&lt;!-- Link ke bagian halaman (ID) --&gt;<br>
+&lt;a href="#tabel"&gt;Loncat ke Bagian Tabel&lt;/a&gt;<br><br>
+&lt;!-- Link email --&gt;<br>
+&lt;a href="mailto:email@example.com"&gt;Kirim Email&lt;/a&gt;<br><br>
+&lt;!-- Link telepon --&gt;<br>
+&lt;a href="tel:+6281234567890"&gt;Hubungi Kami&lt;/a&gt;
+            </div>
+            
+            <div class="demo-output">
+                <p><a href="https://google.com" target="_blank">Ke Google</a></p>
+                <p><a href="#tabel">Loncat ke Bagian Tabel</a></p>
+                <p><a href="mailto:email@example.com">Kirim Email</a></p>
+            </div>
+            
+            <h3>Atribut Tag &lt;a&gt;:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Atribut</th>
+                        <th>Fungsi</th>
+                        <th>Nilai</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>href</code></td>
+                        <td>URL tujuan link</td>
+                        <td>URL, #id, mailto:, tel:</td>
+                    </tr>
+                    <tr>
+                        <td><code>target</code></td>
+                        <td>Cara membuka link</td>
+                        <td>_blank (tab baru), _self (tab sama), _top (frame utama)</td>
+                    </tr>
+                    <tr>
+                        <td><code>title</code></td>
+                        <td>Tooltip saat hover</td>
+                        <td>Teks deskripsi</td>
+                    </tr>
+                    <tr>
+                        <td><code>download</code></td>
+                        <td>Download file saat diklik</td>
+                        <td>Nama file</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECTION 4: HEADING -->
+        <section id="heading" class="section">
+            <h2>📰 4. Heading (Judul)</h2>
+            
+            <p><strong>Fungsi:</strong> Membuat judul atau subjudul dengan hierarki dari besar ke kecil.</p>
+            
+            <div class="demo-output">
+                <h1>H1 - Heading Paling Besar (Judul Utama)</h1>
+                <h2>H2 - Heading Level 2 (Sub Judul)</h2>
+                <h3>H3 - Heading Level 3</h3>
+                <h4>H4 - Heading Level 4</h4>
+                <h5>H5 - Heading Level 5</h5>
+                <h6>H6 - Heading Paling Kecil</h6>
+            </div>
+            
+            <div class="important">
+                <strong>Best Practice:</strong><br>
+                • Gunakan H1 hanya 1 kali per halaman untuk judul utama<br>
+                • Gunakan heading secara hierarkis (jangan skip level)<br>
+                • H1 → H2 → H3 (urutan yang benar)<br>
+                • Heading penting untuk SEO dan aksesibilitas
+            </div>
+        </section>
+
+        <!-- SECTION 5: PEMISAH -->
+        <section id="pemisah" class="section">
+            <h2>➖ 5. Pemisah & Baris Baru</h2>
+            
+            <h3>A. &lt;hr&gt; - Horizontal Rule (Garis Horizontal)</h3>
+            <div class="code-block">
+&lt;p&gt;Teks sebelum garis&lt;/p&gt;<br>
+&lt;hr&gt;<br>
+&lt;p&gt;Teks setelah garis&lt;/p&gt;
+            </div>
+            <div class="demo-output">
+                <p>Teks sebelum garis horizontal</p>
+                <hr>
+                <p>Teks setelah garis horizontal</p>
+            </div>
+            
+            <h3>B. &lt;br&gt; - Break (Ganti Baris)</h3>
+            <div class="code-block">
+&lt;p&gt;Baris pertama&lt;br&gt;Baris kedua&lt;br&gt;Baris ketiga&lt;/p&gt;
+            </div>
+            <div class="demo-output">
+                <p>Baris pertama<br>Baris kedua<br>Baris ketiga</p>
+            </div>
+            
+            <h3>C. &lt;pre&gt; - Preformatted Text</h3>
+            <p><strong>Fungsi:</strong> Menampilkan teks persis seperti yang ditulis (dengan spasi dan enter).</p>
+            <div class="code-block">
+&lt;pre&gt;<br>
+Ini     teks     dengan     spasi     banyak<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Indentasi tetap dipertahankan<br>
+Enter juga dipertahankan<br>
+&lt;/pre&gt;
+            </div>
+            <div class="demo-output">
+                <pre>Ini     teks     dengan     spasi     banyak
+    Indentasi tetap dipertahankan
+Enter juga dipertahankan</pre>
+            </div>
+        </section>
+
+        <!-- SECTION 6: LIST -->
+        <section id="list" class="section">
+            <h2>📑 6. List (Daftar)</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>A. Unordered List (Bullet)</h3>
+                    <p style="margin-bottom:1rem;">Daftar tidak berurutan dengan bullet point.</p>
+                    <div class="code-block" style="background:rgba(255,255,255,0.2); color:rgb(0, 0, 0); border-color:white;">
+&lt;ul type="square"&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Item 1&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Item 2&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Item 3&lt;/li&gt;<br>
+&lt;/ul&gt;
+                    </div>
+                    <ul type="square">
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                    <small><strong>Type:</strong> disc (default), circle, square</small>
+                </div>
+                
+                <div class="card">
+                    <h3>B. Ordered List (Nomor)</h3>
+                    <p style="margin-bottom:1rem;">Daftar berurutan dengan angka/huruf.</p>
+                    <div class="code-block" style="background:rgba(255,255,255,0.2); color:rgb(0, 0, 0); border-color:white;">
+&lt;ol type="A"&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Langkah 1&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Langkah 2&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Langkah 3&lt;/li&gt;<br>
+&lt;/ol&gt;
+                    </div>
+                    <ol type="A">
+                        <li>Langkah 1</li>
+                        <li>Langkah 2</li>
+                        <li>Langkah 3</li>
+                    </ol>
+                    <small><strong>Type:</strong> 1 (default), A, a, I, i</small>
+                </div>
+            </div>
+            
+            <h3>List Bersarang (Nested List)</h3>
+            <div class="code-block">
+&lt;ul&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Buah<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Apel&lt;/li&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Jeruk&lt;/li&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+&nbsp;&nbsp;&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Sayur&lt;/li&gt;<br>
+&lt;/ul&gt;
+            </div>
+            <div class="demo-output">
+                <ul>
+                    <li>Buah
+                        <ul>
+                            <li>Apel</li>
+                            <li>Jeruk</li>
+                        </ul>
+                    </li>
+                    <li>Sayur</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 7: FORMAT TEKS -->
+        <section id="format" class="section">
+            <h2>✏️ 7. Formatting Text (Format Teks)</h2>
+            
+            <h3>A. Bold & Strong</h3>
+            <div class="demo-output">
+                <p><b>&lt;b&gt; Bold Text</b> - Untuk tampilan tebal biasa</p>
+                <p><strong>&lt;strong&gt; Strong Text</strong> - Untuk teks penting (lebih bermakna semantik)</p>
+            </div>
+            
+            <h3>B. Italic & Emphasis</h3>
+            <div class="demo-output">
+                <p><i>&lt;i&gt; Italic Text</i> - Untuk tampilan miring biasa</p>
+                <p><em>&lt;em&gt; Emphasized Text</em> - Untuk penekanan (lebih bermakna semantik)</p>
+            </div>
+            
+            <h3>C. Underline, Strikethrough, Mark</h3>
+            <div class="demo-output">
+                <p><u>&lt;u&gt; Underline Text</u> - Teks bergaris bawah</p>
+                <p><s>&lt;s&gt; Strikethrough Text</s> - Teks dicoret</p>
+                <p><mark>&lt;mark&gt; Highlighted Text</mark> - Teks di-highlight</p>
+            </div>
+            
+            <h3>D. Small & Big</h3>
+            <div class="demo-output">
+                <p>Teks Normal | <small>&lt;small&gt; Teks Kecil</small> | <big>&lt;big&gt; Teks Besar</big></p>
+            </div>
+            
+            <h3>E. Subscript & Superscript</h3>
+            <div class="demo-output">
+                <p>H<sub>2</sub>O - Rumus air menggunakan &lt;sub&gt; (subscript)</p>
+                <p>E=mc<sup>2</sup> - Rumus Einstein menggunakan &lt;sup&gt; (superscript)</p>
+                <p>10<sup>3</sup> = 1000</p>
+            </div>
+            
+            <div class="important">
+                <strong>Perbedaan Semantik:</strong><br>
+                • <code>&lt;b&gt;</code> vs <code>&lt;strong&gt;</code>: Strong lebih bermakna "penting"<br>
+                • <code>&lt;i&gt;</code> vs <code>&lt;em&gt;</code>: Em lebih bermakna "penekanan"<br>
+                • Gunakan strong/em untuk SEO dan screen reader yang lebih baik
+            </div>
+        </section>
+
+        <!-- SECTION 8: QUOTE & ABBR -->
+        <section id="quote" class="section">
+            <h2>💬 8. Quote & Abbreviation</h2>
+            
+            <h3>A. &lt;q&gt; - Inline Quote (Kutipan Pendek)</h3>
+            <div class="code-block">
+&lt;p&gt;Dia berkata &lt;q&gt;Ini kutipan pendek&lt;/q&gt; dalam kalimat.&lt;/p&gt;
+            </div>
+            <div class="demo-output">
+                <p>Dia berkata <q>Ini kutipan pendek dengan tanda kutip otomatis</q> dalam kalimat.</p>
+            </div>
+            
+            <h3>B. &lt;blockquote&gt; - Block Quote (Kutipan Panjang)</h3>
+            <div class="code-block">
+&lt;blockquote cite="https://source.com"&gt;<br>
+&nbsp;&nbsp;Ini adalah kutipan panjang dari sumber lain.<br>
+&nbsp;&nbsp;Biasanya digunakan untuk mengutip paragraf penuh.<br>
+&lt;/blockquote&gt;
+            </div>
+            <div class="demo-output">
+                <blockquote style="border-left: 4px solid #667eea; padding-left: 1rem; margin: 1rem 0; font-style: italic;">
+                    Ini adalah blockquote untuk kutipan panjang. Biasanya digunakan untuk mengutip paragraf penuh dari sumber lain seperti artikel atau buku.
+                </blockquote>
+            </div>
+            
+            <h3>C. &lt;abbr&gt; - Abbreviation (Singkatan)</h3>
+            <p><strong>Fungsi:</strong> Menampilkan tooltip kepanjangan saat di-hover.</p>
+            <div class="code-block">
+&lt;p&gt;&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; adalah bahasa markup.&lt;/p&gt;
+            </div>
+            <div class="demo-output">
+                <p><abbr title="HyperText Markup Language" style="cursor:help; border-bottom:1px dotted #333;">HTML</abbr> adalah bahasa markup. (Hover untuk lihat kepanjangan)</p>
+                <p><abbr title="Cascading Style Sheets" style="cursor:help; border-bottom:1px dotted #333;">CSS</abbr> untuk styling.</p>
+                <p><abbr title="World Health Organization" style="cursor:help; border-bottom:1px dotted #333;">WHO</abbr> adalah organisasi kesehatan dunia.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 9: ENTITIES -->
+        <section id="entities" class="section">
+            <h2>🔣 9. HTML Entities (Simbol Khusus)</h2>
+            
+            <p><strong>Fungsi:</strong> Menampilkan karakter khusus yang tidak bisa langsung diketik atau memiliki arti khusus di HTML.</p>
+            
+            <h3>Simbol Dasar:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kode Entity</th>
+                        <th>Simbol</th>
+                        <th>Deskripsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>&amp;nbsp;</code></td>
+                        <td>&nbsp;</td>
+                        <td>Non-breaking space (spasi)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;lt;</code></td>
+                        <td>&lt;</td>
+                        <td>Less than (kurang dari)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;gt;</code></td>
+                        <td>&gt;</td>
+                        <td>Greater than (lebih dari)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;le;</code></td>
+                        <td>&le;</td>
+                        <td>Less than or equal (kurang sama dengan)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;ge;</code></td>
+                        <td>&ge;</td>
+                        <td>Greater than or equal (lebih sama dengan)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;amp;</code></td>
+                        <td>&amp;</td>
+                        <td>Ampersand</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;quot;</code></td>
+                        <td>&quot;</td>
+                        <td>Double quote (kutip ganda)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;apos;</code></td>
+                        <td>&apos;</td>
+                        <td>Apostrophe (kutip tunggal)</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Simbol Mata Uang & Hak Cipta:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kode Entity</th>
+                        <th>Simbol</th>
+                        <th>Deskripsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>&amp;copy;</code></td>
+                        <td>&copy;</td>
+                        <td>Copyright</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;reg;</code></td>
+                        <td>&reg;</td>
+                        <td>Registered trademark</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;trade;</code></td>
+                        <td>&trade;</td>
+                        <td>Trademark</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;euro;</code></td>
+                        <td>&euro;</td>
+                        <td>Euro</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;yen;</code></td>
+                        <td>&yen;</td>
+                        <td>Yen</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;pound;</code></td>
+                        <td>&pound;</td>
+                        <td>Pound</td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;cent;</code></td>
+                        <td>&cent;</td>
+                        <td>Cent</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Contoh Penggunaan:</h3>
+            <div class="entity-demo">
+                5 &lt; 10 &nbsp;|&nbsp; 10 &gt; 5 &nbsp;|&nbsp; x &le; 100 &nbsp;|&nbsp; y &ge; 50<br>
+                A &amp; B &nbsp;|&nbsp; Harga: &euro;50 / &yen;5000 / &pound;40<br>
+                &copy; 2025 Company &nbsp;|&nbsp; Brand&reg; &nbsp;|&nbsp; Product&trade;
+            </div>
+            
+            <div class="code-block">
+5 &amp;lt; 10 | 10 &amp;gt; 5 | x &amp;le; 100 | y &amp;ge; 50<br>
+A &amp;amp; B | Harga: &amp;euro;50 / &amp;yen;5000 / &amp;pound;40<br>
+&amp;copy; 2025 Company | Brand&amp;reg; | Product&amp;trade;
+            </div>
+        </section>
+
+        <!-- SECTION 10: DETAILS -->
+        <section id="details" class="section">
+            <h2>🔽 10. Details (Expandable Content)</h2>
+            
+            <p><strong>Fungsi:</strong> Membuat konten yang bisa dibuka/tutup (collapsible/expandable).</p>
+            
+            <div class="code-block">
+&lt;details&gt;<br>
+&nbsp;&nbsp;&lt;summary&gt;Klik untuk melihat detail&lt;/summary&gt;<br>
+&nbsp;&nbsp;&lt;p&gt;Ini konten yang tersembunyi&lt;/p&gt;<br>
+&nbsp;&nbsp;&lt;ul&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Item 1&lt;/li&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Item 2&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;/ul&gt;<br>
+&lt;/details&gt;
+            </div>
+            
+            <h3>Contoh Interaktif:</h3>
+            <div class="demo-output">
+                <details>
+                    <summary style="cursor:pointer; font-weight:bold; color:#667eea; padding:0.5rem;">🔽 Klik untuk melihat FAQ #1</summary>
+                    <p style="padding:1rem; background:#f9f9f9; margin-top:0.5rem; border-radius:5px;">
+                        Ini adalah jawaban untuk pertanyaan pertama. Anda bisa menyembunyikannya kembali dengan klik summary.
+                    </p>
+                </details>
+                
+                <details style="margin-top:1rem;">
+                    <summary style="cursor:pointer; font-weight:bold; color:#667eea; padding:0.5rem;">🔽 Klik untuk melihat daftar lengkap</summary>
+                    <ul style="padding:1rem; background:#f9f9f9; margin-top:0.5rem; border-radius:5px;">
+                        <li>Item tersembunyi 1</li>
+                        <li>Item tersembunyi 2</li>
+                        <li>Item tersembunyi 3</li>
+                        <li>Item tersembunyi 4</li>
+                    </ul>
+                </details>
+                
+                <details open style="margin-top:1rem;">
+                    <summary style="cursor:pointer; font-weight:bold; color:#667eea; padding:0.5rem;">🔽 Details dengan atribut "open" (terbuka default)</summary>
+                    <p style="padding:1rem; background:#f9f9f9; margin-top:0.5rem; border-radius:5px;">
+                        Gunakan atribut <code>open</code> untuk membuat details terbuka secara default.
+                    </p>
+                </details>
+            </div>
+            
+            <div class="important">
+                <strong>Atribut Details:</strong><br>
+                • <code>open</code> - membuat details terbuka secara default<br>
+                • Tag <code>&lt;summary&gt;</code> adalah judul yang bisa diklik<br>
+                • Konten lainnya akan tersembunyi hingga user klik summary
+            </div>
+        </section>
+
+        <!-- SECTION 11: MULTIMEDIA -->
+        <section id="multimedia" class="section">
+            <h2>🎬 11. Multimedia (Gambar, Audio, Video, Iframe)</h2>
+            
+            <h3>A. Gambar &lt;img&gt;</h3>
+            <div class="code-block">
+&lt;img src="gambar.jpg" alt="Deskripsi gambar" width="300" height="200"&gt;
+            </div>
+            
+            <h3>B. Figure & Figcaption (Gambar dengan Caption)</h3>
+            <div class="code-block">
+&lt;figure&gt;<br>
+&nbsp;&nbsp;&lt;img src="photo.jpg" alt="Foto pemandangan" width="400"&gt;<br>
+&nbsp;&nbsp;&lt;figcaption&gt;Pemandangan gunung di pagi hari&lt;/figcaption&gt;<br>
+&lt;/figure&gt;
+            </div>
+            <div class="example-box">
+                <figure style="text-align:center; margin:1rem 0;">
+                    <div style="background:#ddd; padding:3rem; border-radius:10px; color:#666;">
+                        [Placeholder Image 400x250]
+                    </div>
+                    <figcaption style="margin-top:0.5rem; font-style:italic; color:#666;">Caption menjelaskan gambar di atas</figcaption>
+                </figure>
+            </div>
+            
+            <h3>C. Audio Player</h3>
+            <div class="code-block">
+&lt;audio controls autoplay loop&gt;<br>
+&nbsp;&nbsp;&lt;source src="music.mp3" type="audio/mpeg"&gt;<br>
+&nbsp;&nbsp;&lt;source src="music.ogg" type="audio/ogg"&gt;<br>
+&nbsp;&nbsp;Browser Anda tidak support audio.<br>
+&lt;/audio&gt;
+            </div>
+            
+            <h3>D. Video Player</h3>
+            <div class="code-block">
+&lt;video width="640" height="360" controls poster="thumbnail.jpg"&gt;<br>
+&nbsp;&nbsp;&lt;source src="video.mp4" type="video/mp4"&gt;<br>
+&nbsp;&nbsp;&lt;source src="video.webm" type="video/webm"&gt;<br>
+&nbsp;&nbsp;Browser Anda tidak support video.<br>
+&lt;/video&gt;
+            </div>
+            
+            <h3>E. Iframe (Embed Website/YouTube)</h3>
+            <div class="code-block">
+&lt;!-- Embed YouTube --&gt;<br>
+&lt;iframe width="560" height="315" <br>
+&nbsp;&nbsp;src="https://www.youtube.com/embed/VIDEO_ID" <br>
+&nbsp;&nbsp;frameborder="0" <br>
+&nbsp;&nbsp;allowfullscreen&gt;<br>
+&lt;/iframe&gt;<br><br>
+&lt;!-- Embed Website Lain --&gt;<br>
+&lt;iframe src="https://example.com" width="800" height="600"&gt;&lt;/iframe&gt;
+            </div>
+            
+            <h3>📝 Atribut Multimedia Lengkap:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Atribut</th>
+                        <th>Tag</th>
+                        <th>Fungsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>src</code></td>
+                        <td>img, audio, video, iframe</td>
+                        <td>Lokasi file (URL atau path lokal)</td>
+                    </tr>
+                    <tr>
+                        <td><code>alt</code></td>
+                        <td>img</td>
+                        <td>Teks alternatif (penting untuk SEO & aksesibilitas)</td>
+                    </tr>
+                    <tr>
+                        <td><code>width</code> / <code>height</code></td>
+                        <td>img, video, iframe</td>
+                        <td>Ukuran lebar/tinggi (pixel atau %)</td>
+                    </tr>
+                    <tr>
+                        <td><code>controls</code></td>
+                        <td>audio, video</td>
+                        <td>Tampilkan kontrol play/pause/volume</td>
+                    </tr>
+                    <tr>
+                        <td><code>autoplay</code></td>
+                        <td>audio, video</td>
+                        <td>Otomatis play saat halaman load</td>
+                    </tr>
+                    <tr>
+                        <td><code>loop</code></td>
+                        <td>audio, video</td>
+                        <td>Putar ulang terus menerus</td>
+                    </tr>
+                    <tr>
+                        <td><code>muted</code></td>
+                        <td>audio, video</td>
+                        <td>Matikan suara</td>
+                    </tr>
+                    <tr>
+                        <td><code>poster</code></td>
+                        <td>video</td>
+                        <td>Gambar thumbnail sebelum video diputar</td>
+                    </tr>
+                    <tr>
+                        <td><code>type</code></td>
+                        <td>source</td>
+                        <td>MIME type (audio/mpeg, video/mp4, dll)</td>
+                    </tr>
+                    <tr>
+                        <td><code>frameborder</code></td>
+                        <td>iframe</td>
+                        <td>Border iframe (0 atau 1)</td>
+                    </tr>
+                    <tr>
+                        <td><code>allowfullscreen</code></td>
+                        <td>iframe</td>
+                        <td>Izinkan fullscreen mode</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECTION 12: TABEL -->
+        <section id="tabel" class="section">
+            <h2>📊 12. Tabel HTML</h2>
+            
+            <h3>Struktur Tabel Lengkap</h3>
+            <div class="code-block">
+&lt;table border="1"&gt;<br>
+&nbsp;&nbsp;&lt;caption&gt;Judul Tabel&lt;/caption&gt;<br>
+&nbsp;&nbsp;&lt;thead&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 1&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 2&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&lt;/thead&gt;<br>
+&nbsp;&nbsp;&lt;tbody&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Data 1&lt;/td&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Data 2&lt;/td&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&lt;/tbody&gt;<br>
+&lt;/table&gt;
+            </div>
+            
+            <h3>Contoh Tabel Sederhana:</h3>
+            <table>
+                <caption style="font-size:1.2rem; font-weight:bold; margin-bottom:0.5rem;">Daftar Siswa Kelas 10A</caption>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Nilai</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Ahmad</td>
+                        <td>85</td>
+                        <td>Lulus</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Siti</td>
+                        <td>92</td>
+                        <td>Lulus</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Budi</td>
+                        <td>78</td>
+                        <td>Lulus</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>🔥 Colspan & Rowspan (Menggabungkan Sel)</h3>
+            
+            <div class="important">
+                <strong>Penting!</strong><br>
+                • <code>colspan="n"</code> = menggabungkan N sel secara HORIZONTAL (ke samping)<br>
+                • <code>rowspan="n"</code> = menggabungkan N sel secara VERTIKAL (ke bawah)
+            </div>
+            
+            <h4>A. Colspan Example (Gabung Horizontal)</h4>
+            <div class="code-block">
+&lt;table border="1"&gt;<br>
+&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;th colspan="3"&gt;Judul Utama (Gabung 3 Kolom)&lt;/th&gt;<br>
+&nbsp;&nbsp;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Kolom 1&lt;/td&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Kolom 2&lt;/td&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Kolom 3&lt;/td&gt;<br>
+&nbsp;&nbsp;&lt;/tr&gt;<br>
+&lt;/table&gt;
+            </div>
+            <table style="margin:1rem 0;">
+                <tr>
+                    <th colspan="3" style="background:#764ba2; color:white;">Judul Utama (Gabung 3 Kolom)</th>
+                </tr>
+                <tr>
+                    <td>Kolom 1</td>
+                    <td>Kolom 2</td>
+                    <td>Kolom 3</td>
+                </tr>
+            </table>
+            
+            <h4>B. Rowspan Example (Gabung Vertikal)</h4>
+            <div class="code-block">
+&lt;table border="1"&gt;<br>
+&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td rowspan="3"&gt;Gabung 3 Baris&lt;/td&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Baris 1&lt;/td&gt;<br>
+&nbsp;&nbsp;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Baris 2&lt;/td&gt;<br>
+&nbsp;&nbsp;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Baris 3&lt;/td&gt;<br>
+&nbsp;&nbsp;&lt;/tr&gt;<br>
+&lt;/table&gt;
+            </div>
+            <table style="margin:1rem 0;">
+                <tr>
+                    <td rowspan="3" style="background:#764ba2; color:white; vertical-align:middle; font-weight:bold;">Gabung 3 Baris</td>
+                    <td>Baris 1</td>
+                </tr>
+                <tr>
+                    <td>Baris 2</td>
+                </tr>
+                <tr>
+                    <td>Baris 3</td>
+                </tr>
+            </table>
+            
+            <h4>C. Kombinasi Colspan & Rowspan (Complex Table)</h4>
+            <table style="margin:1rem 0;">
+                <caption style="font-weight:bold; margin-bottom:0.5rem;">Jadwal Pelajaran</caption>
+                <thead>
+                    <tr>
+                        <th>Hari</th>
+                        <th>Jam 1-2</th>
+                        <th>Jam 3-4</th>
+                        <th>Jam 5-6</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Senin</td>
+                        <td colspan="2" style="background:#ffeb3b;">Matematika (Double Period)</td>
+                        <td>IPA</td>
+                    </tr>
+                    <tr>
+                        <td>Selasa</td>
+                        <td rowspan="2" style="background:#81c784; vertical-align:middle;">B. Inggris<br>(2 Hari)</td>
+                        <td>IPS</td>
+                        <td>Olahraga</td>
+                    </tr>
+                    <tr>
+                        <td>Rabu</td>
+                        <td>Seni</td>
+                        <td>Agama</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>📝 Semua Atribut Tabel:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Atribut</th>
+                        <th>Tag</th>
+                        <th>Fungsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>border</code></td>
+                        <td>table</td>
+                        <td>Ketebalan border (pixel)</td>
+                    </tr>
+                    <tr>
+                        <td><code>cellpadding</code></td>
+                        <td>table</td>
+                        <td>Jarak dalam sel (padding)</td>
+                    </tr>
+                    <tr>
+                        <td><code>cellspacing</code></td>
+                        <td>table</td>
+                        <td>Jarak antar sel</td>
+                    </tr>
+                    <tr>
+                        <td><code>width</code></td>
+                        <td>table, td, th</td>
+                        <td>Lebar tabel/sel (pixel atau %)</td>
+                    </tr>
+                    <tr>
+                        <td><code>height</code></td>
+                        <td>table, td, th</td>
+                        <td>Tinggi tabel/sel (pixel atau %)</td>
+                    </tr>
+                    <tr>
+                        <td><code>align</code></td>
+                        <td>table, td, th</td>
+                        <td>Posisi (left, center, right)</td>
+                    </tr>
+                    <tr>
+                        <td><code>valign</code></td>
+                        <td>td, th</td>
+                        <td>Posisi vertikal (top, middle, bottom)</td>
+                    </tr>
+                    <tr>
+                        <td><code>bgcolor</code></td>
+                        <td>table, tr, td, th</td>
+                        <td>Warna background</td>
+                    </tr>
+                    <tr>
+                        <td><code>colspan</code></td>
+                        <td>td, th</td>
+                        <td>Gabung N kolom ke samping</td>
+                    </tr>
+                    <tr>
+                        <td><code>rowspan</code></td>
+                        <td>td, th</td>
+                        <td>Gabung N baris ke bawah</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="important">
+                <strong>Elemen Tabel:</strong><br>
+                • <code>&lt;table&gt;</code> = wadah utama tabel<br>
+                • <code>&lt;caption&gt;</code> = judul tabel<br>
+                • <code>&lt;thead&gt;</code> = bagian kepala (header)<br>
+                • <code>&lt;tbody&gt;</code> = bagian isi (body)<br>
+                • <code>&lt;tfoot&gt;</code> = bagian kaki (footer)<br>
+                • <code>&lt;tr&gt;</code> = table row (baris horizontal)<br>
+                • <code>&lt;th&gt;</code> = table header (sel header, bold & center default)<br>
+                • <code>&lt;td&gt;</code> = table data (sel data biasa)
+            </div>
+        </section>
+
+        <!-- SECTION 13: FORM -->
+        <section id="form" class="section">
+            <h2>📋 13. Form HTML (Input Data)</h2>
+            
+            <h3>Form Lengkap dengan Berbagai Input:</h3>
+            <form>
+                <label for="nama"><strong>Nama Lengkap:</strong></label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+                
+                <label for="email"><strong>Email:</strong></label>
+                <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                
+                <label for="password"><strong>Password:</strong></label>
+                <input type="password" id="password" name="password" placeholder="Min. 8 karakter">
+                
+                <label for="tanggal"><strong>Tanggal Lahir:</strong></label>
+                <input type="date" id="tanggal" name="tanggal">
+                
+                <label><strong>Jenis Kelamin:</strong></label>
+                <div style="margin:0.5rem 0;">
+                    <input type="radio" id="laki" name="gender" value="laki-laki">
+                    <label for="laki">Laki-laki</label>
+                    
+                    <input type="radio" id="perempuan" name="gender" value="perempuan" style="margin-left:1rem;">
+                    <label for="perempuan">Perempuan</label>
+                </div>
+                
+                <label><strong>Hobi (bisa pilih lebih dari 1):</strong></label>
+                <div style="margin:0.5rem 0;">
+                    <input type="checkbox" id="musik" name="hobi" value="musik">
+                    <label for="musik">Musik</label>
+                    
+                    <input type="checkbox" id="olahraga" name="hobi" value="olahraga" style="margin-left:1rem;">
+                    <label for="olahraga">Olahraga</label>
+                    
+                    <input type="checkbox" id="membaca" name="hobi" value="membaca" style="margin-left:1rem;">
+                    <label for="membaca">Membaca</label>
+                </div>
+                
+                <label for="kota"><strong>Kota Asal (Dropdown Biasa):</strong></label>
+                <select id="kota" name="kota">
+                    <option value="">-- Pilih Kota --</option>
+                    <optgroup label="Jawa">
+                        <option value="jakarta">Jakarta</option>
+                        <option value="bandung">Bandung</option>
+                        <option value="surabaya">Surabaya</option>
+                    </optgroup>
+                    <optgroup label="Luar Jawa">
+                        <option value="medan">Medan</option>
+                        <option value="makassar">Makassar</option>
+                        <option value="bali" selected>Bali (default)</option>
+                    </optgroup>
+                </select>
+                
+                <label for="bahasa"><strong>Bahasa yang Dikuasai (Multiple - Tahan Ctrl/Cmd):</strong></label>
+                <select id="bahasa" name="bahasa" multiple size="5" required style="height:auto;">
+                    <option value="indonesia">Indonesia</option>
+                    <option value="inggris">Inggris</option>
+                    <option value="mandarin">Mandarin</option>
+                    <option value="jepang">Jepang</option>
+                    <option value="arab">Arab</option>
+                    <option value="perancis">Perancis</option>
+                </select>
+                <small style="color:#666; display:block; margin-top:0.3rem;">* Tahan Ctrl (Windows) atau Cmd (Mac) untuk pilih lebih dari 1</small>
+                
+                <label for="makanan"><strong>Makanan Favorit (Size=3, Tampil 3 Opsi):</strong></label>
+                <select id="makanan" name="makanan" size="3" style="height:auto;">
+                    <option value="nasi-goreng">Nasi Goreng</option>
+                    <option value="sate">Sate</option>
+                    <option value="rendang">Rendang</option>
+                    <option value="gado-gado">Gado-gado</option>
+                    <option value="soto">Soto</option>
+                </select>
+                
+                <label for="pesan"><strong>Pesan/Komentar:</strong></label>
+                <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pesan Anda di sini..."></textarea>
+                
+                <button type="submit">✉️ Kirim Data</button>
+                <button type="reset" style="background:#f44336; margin-left:1rem;">🔄 Reset Form</button>
+            </form>
+            
+            <h3>📝 Atribut Select Lengkap:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Atribut</th>
+                        <th>Fungsi</th>
+                        <th>Nilai</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>name</code></td>
+                        <td>Nama field untuk backend</td>
+                        <td>String</td>
+                    </tr>
+                    <tr>
+                        <td><code>id</code></td>
+                        <td>Identifier untuk label</td>
+                        <td>String</td>
+                    </tr>
+                    <tr>
+                        <td><code>multiple</code></td>
+                        <td>Boleh pilih lebih dari 1 (tahan Ctrl/Cmd)</td>
+                        <td>Boolean</td>
+                    </tr>
+                    <tr>
+                        <td><code>size</code></td>
+                        <td>Tampilkan N opsi sekaligus (default=1 dropdown)</td>
+                        <td>Number</td>
+                    </tr>
+                    <tr>
+                        <td><code>required</code></td>
+                        <td>Harus diisi, tidak boleh kosong</td>
+                        <td>Boolean</td>
+                    </tr>
+                    <tr>
+                        <td><code>disabled</code></td>
+                        <td>Tidak bisa diubah/diakses</td>
+                        <td>Boolean</td>
+                    </tr>
+                    <tr>
+                        <td><code>autofocus</code></td>
+                        <td>Fokus otomatis saat halaman load</td>
+                        <td>Boolean</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>📝 Atribut Option Lengkap:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Atribut</th>
+                        <th>Fungsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>value</code></td>
+                        <td>Nilai yang dikirim ke server</td>
+                    </tr>
+                    <tr>
+                        <td><code>selected</code></td>
+                        <td>Opsi default yang terpilih</td>
+                    </tr>
+                    <tr>
+                        <td><code>disabled</code></td>
+                        <td>Opsi tidak bisa dipilih</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>🎯 Semua Type Input:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Fungsi</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>text</code></td>
+                        <td>Input teks biasa</td>
+                        <td>&lt;input type="text"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>password</code></td>
+                        <td>Input password (disembunyikan)</td>
+                        <td>&lt;input type="password"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>email</code></td>
+                        <td>Input email (validasi otomatis)</td>
+                        <td>&lt;input type="email"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>number</code></td>
+                        <td>Input angka saja</td>
+                        <td>&lt;input type="number"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>date</code></td>
+                        <td>Pilih tanggal</td>
+                        <td>&lt;input type="date"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>time</code></td>
+                        <td>Pilih waktu</td>
+                        <td>&lt;input type="time"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>datetime-local</code></td>
+                        <td>Pilih tanggal & waktu</td>
+                        <td>&lt;input type="datetime-local"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>file</code></td>
+                        <td>Upload file</td>
+                        <td>&lt;input type="file"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>radio</code></td>
+                        <td>Pilihan tunggal</td>
+                        <td>&lt;input type="radio"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>checkbox</code></td>
+                        <td>Pilihan jamak</td>
+                        <td>&lt;input type="checkbox"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>color</code></td>
+                        <td>Pilih warna</td>
+                        <td>&lt;input type="color"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>range</code></td>
+                        <td>Slider angka</td>
+                        <td>&lt;input type="range"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>url</code></td>
+                        <td>Input URL (validasi)</td>
+                        <td>&lt;input type="url"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>tel</code></td>
+                        <td>Input nomor telepon</td>
+                        <td>&lt;input type="tel"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>search</code></td>
+                        <td>Input pencarian</td>
+                        <td>&lt;input type="search"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>submit</code></td>
+                        <td>Tombol submit</td>
+                        <td>&lt;input type="submit"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>reset</code></td>
+                        <td>Tombol reset form</td>
+                        <td>&lt;input type="reset"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>button</code></td>
+                        <td>Tombol biasa</td>
+                        <td>&lt;input type="button"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td><code>hidden</code></td>
+                        <td>Input tersembunyi</td>
+                        <td>&lt;input type="hidden"&gt;</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>📋 Atribut Input Lengkap:</h3>
+            <div class="code-block" style="font-size:0.9rem;">
+&lt;input <br>
+&nbsp;&nbsp;type="text"<br>
+&nbsp;&nbsp;name="username"<br>
+&nbsp;&nbsp;id="username"<br>
+&nbsp;&nbsp;value="Isi default"<br>
+&nbsp;&nbsp;placeholder="Ketik di sini..."<br>
+&nbsp;&nbsp;required<br>
+&nbsp;&nbsp;disabled<br>
+&nbsp;&nbsp;readonly<br>
+&nbsp;&nbsp;maxlength="50"<br>
+&nbsp;&nbsp;minlength="3"<br>
+&nbsp;&nbsp;min="1" max="100" (untuk number/date)<br>
+&nbsp;&nbsp;step="5" (untuk number/range)<br>
+&nbsp;&nbsp;pattern="[A-Za-z]+" (regex validation)<br>
+&nbsp;&nbsp;autocomplete="off"<br>
+&nbsp;&nbsp;autofocus<br>
+&nbsp;&nbsp;multiple (untuk file/email)<br>
+&nbsp;&nbsp;accept="image/*" (untuk file)<br>
+&gt;
+            </div>
+            
+            <h3>📝 Atribut Textarea:</h3>
+            <div class="code-block">
+&lt;textarea <br>
+&nbsp;&nbsp;name="message"<br>
+&nbsp;&nbsp;id="message"<br>
+&nbsp;&nbsp;rows="5"<br>
+&nbsp;&nbsp;cols="50"<br>
+&nbsp;&nbsp;placeholder="Tulis pesan..."<br>
+&nbsp;&nbsp;required<br>
+&nbsp;&nbsp;maxlength="500"<br>
+&gt;&lt;/textarea&gt;
+            </div>
+            
+            <h3>🔘 Atribut Button:</h3>
+            <div class="code-block">
+&lt;button type="submit"&gt;Kirim&lt;/button&gt;<br>
+&lt;button type="reset"&gt;Reset&lt;/button&gt;<br>
+&lt;button type="button"&gt;Biasa&lt;/button&gt;
+            </div>
+            
+            <div class="important">
+                <strong>Tag Pendukung Form:</strong><br>
+                • <code>&lt;form&gt;</code> = wadah form<br>
+                • <code>&lt;input&gt;</code> = berbagai jenis input<br>
+                • <code>&lt;textarea&gt;</code> = input teks panjang<br>
+                • <code>&lt;select&gt;</code> = dropdown list<br>
+                • <code>&lt;option&gt;</code> = opsi dalam select<br>
+                • <code>&lt;optgroup&gt;</code> = grouping opsi dalam select<br>
+                • <code>&lt;button&gt;</code> = tombol<br>
+                • <code>&lt;label&gt;</code> = label untuk input (penting untuk aksesibilitas)<br>
+                • <code>&lt;fieldset&gt;</code> = grouping field form<br>
+                • <code>&lt;legend&gt;</code> = judul untuk fieldset
+            </div>
+        </section>
+
+        <!-- SECTION 14: FRAMESET -->
+        <section id="frameset" class="section">
+            <h2>🖼️ 14. Frameset (Membagi Halaman)</h2>
+            
+            <div class="important">
+                <strong>⚠️ PERINGATAN:</strong> Frameset adalah teknologi LAMA dan sudah DEPRECATED (tidak direkomendasikan) di HTML5. Browser modern masih support tapi tidak disarankan untuk project baru. Gunakan <code>&lt;iframe&gt;</code> atau CSS Grid/Flexbox untuk layout modern.
+            </div>
+            
+            <h3>Apa itu Frameset?</h3>
+            <p>Frameset digunakan untuk membagi browser window menjadi beberapa bagian (frame), di mana setiap frame bisa load halaman HTML terpisah.</p>
+            
+            <h3>Struktur Dasar Frameset</h3>
+            <div class="code-block">
+&lt;!DOCTYPE html&gt;<br>
+&lt;html&gt;<br>
+&lt;head&gt;<br>
+&nbsp;&nbsp;&lt;title&gt;Frameset Example&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;!-- TIDAK ADA &lt;body&gt; di frameset! --&gt;<br>
+&lt;frameset cols="25%, 75%"&gt;<br>
+&nbsp;&nbsp;&lt;frame src="menu.html" name="menu"&gt;<br>
+&nbsp;&nbsp;&lt;frame src="content.html" name="content"&gt;<br>
+&lt;/frameset&gt;<br>
+&lt;/html&gt;
+            </div>
+            
+            <h3>Atribut Frameset:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Atribut</th>
+                        <th>Nilai</th>
+                        <th>Penjelasan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>cols</code></td>
+                        <td>"25%, 50%, 25%"<br>"100, *, 200"</td>
+                        <td>Membagi frame secara VERTIKAL (kolom kiri-kanan)</td>
+                    </tr>
+                    <tr>
+                        <td><code>rows</code></td>
+                        <td>"100, *, 50"<br>"20%, 60%, 20%"</td>
+                        <td>Membagi frame secara HORIZONTAL (baris atas-bawah)</td>
+                    </tr>
+                    <tr>
+                        <td><code>border</code></td>
+                        <td>"0" atau "5"</td>
+                        <td>Ketebalan border antar frame (pixel)</td>
+                    </tr>
+                    <tr>
+                        <td><code>frameborder</code></td>
+                        <td>"0" atau "1"</td>
+                        <td>Tampilkan/sembunyikan border frame</td>
+                    </tr>
+                    <tr>
+                        <td><code>framespacing</code></td>
+                        <td>"10"</td>
+                        <td>Jarak antar frame (pixel)</td>
+                    </tr>
+                    <tr>
+                        <td><code>bordercolor</code></td>
+                        <td>"#FF0000"</td>
+                        <td>Warna border frame</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Atribut Frame:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Atribut</th>
+                        <th>Fungsi</th>
+                        <th>Nilai</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>src</code></td>
+                        <td>URL halaman yang di-load</td>
+                        <td>src="page.html"</td>
+                    </tr>
+                    <tr>
+                        <td><code>name</code></td>
+                        <td>Nama frame (untuk target link)</td>
+                        <td>name="content"</td>
+                    </tr>
+                    <tr>
+                        <td><code>noresize</code></td>
+                        <td>Frame tidak bisa di-resize user</td>
+                        <td>noresize="noresize"</td>
+                    </tr>
+                    <tr>
+                        <td><code>scrolling</code></td>
+                        <td>Kontrol scrollbar</td>
+                        <td>"yes", "no", "auto"</td>
+                    </tr>
+                    <tr>
+                        <td><code>frameborder</code></td>
+                        <td>Border frame individual</td>
+                        <td>"0" atau "1"</td>
+                    </tr>
+                    <tr>
+                        <td><code>marginwidth</code></td>
+                        <td>Margin kiri-kanan (pixel)</td>
+                        <td>marginwidth="10"</td>
+                    </tr>
+                    <tr>
+                        <td><code>marginheight</code></td>
+                        <td>Margin atas-bawah (pixel)</td>
+                        <td>marginheight="10"</td>
+                    </tr>
+                    <tr>
+                        <td><code>bordercolor</code></td>
+                        <td>Warna border frame individual</td>
+                        <td>bordercolor="#00FF00"</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Contoh Frameset Horizontal (Rows)</h3>
+            <div class="code-block">
+&lt;frameset rows="20%, 60%, 20%"&gt;<br>
+&nbsp;&nbsp;&lt;frame src="header.html" name="header" noresize scrolling="no"&gt;<br>
+&nbsp;&nbsp;&lt;frame src="main.html" name="main" scrolling="auto"&gt;<br>
+&nbsp;&nbsp;&lt;frame src="footer.html" name="footer" noresize scrolling="no"&gt;<br>
+&lt;/frameset&gt;
+            </div>
+            
+            <h3>Contoh Frameset Vertikal (Cols)</h3>
+            <div class="code-block">
+&lt;frameset cols="200, *"&gt;<br>
+&nbsp;&nbsp;&lt;frame src="menu.html" name="menu" noresize&gt;<br>
+&nbsp;&nbsp;&lt;frame src="content.html" name="content"&gt;<br>
+&lt;/frameset&gt;
+            </div>
+            
+            <h3>Frameset Nested (Bersarang)</h3>
+            <div class="code-block">
+&lt;frameset rows="100, *"&gt;<br>
+&nbsp;&nbsp;&lt;frame src="header.html" name="header"&gt;<br>
+&nbsp;&nbsp;&lt;frameset cols="200, *"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;frame src="menu.html" name="menu"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;frame src="content.html" name="content"&gt;<br>
+&nbsp;&nbsp;&lt;/frameset&gt;<br>
+&lt;/frameset&gt;
+            </div>
+            
+            <h3>Noframes (Fallback)</h3>
+            <p><strong>Fungsi:</strong> Konten yang ditampilkan jika browser tidak support frameset.</p>
+            <div class="code-block">
+&lt;frameset cols="25%, 75%"&gt;<br>
+&nbsp;&nbsp;&lt;frame src="menu.html"&gt;<br>
+&nbsp;&nbsp;&lt;frame src="content.html"&gt;<br>
+&nbsp;&nbsp;&lt;noframes&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Browser Anda tidak support frames.&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;<br>
+&nbsp;&nbsp;&lt;/noframes&gt;<br>
+&lt;/frameset&gt;
+            </div>
+            
+            <h3>Link Target untuk Frame</h3>
+            <p>Saat menggunakan frameset, link bisa ditargetkan ke frame tertentu:</p>
+            <div class="code-block">
+&lt;!-- Di menu.html --&gt;<br>
+&lt;a href="page1.html" target="content"&gt;Halaman 1&lt;/a&gt;<br>
+&lt;a href="page2.html" target="content"&gt;Halaman 2&lt;/a&gt;<br>
+&lt;a href="page3.html" target="_blank"&gt;Buka Tab Baru&lt;/a&gt;<br>
+&lt;a href="page4.html" target="_top"&gt;Keluar dari Frame&lt;/a&gt;
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Target</th>
+                        <th>Fungsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>target="nama_frame"</code></td>
+                        <td>Buka di frame dengan nama tertentu</td>
+                    </tr>
+                    <tr>
+                        <td><code>target="_self"</code></td>
+                        <td>Buka di frame yang sama</td>
+                    </tr>
+                    <tr>
+                        <td><code>target="_blank"</code></td>
+                        <td>Buka di tab/window baru</td>
+                    </tr>
+                    <tr>
+                        <td><code>target="_parent"</code></td>
+                        <td>Buka di parent frameset</td>
+                    </tr>
+                    <tr>
+                        <td><code>target="_top"</code></td>
+                        <td>Keluar dari semua frame, isi full window</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="important">
+                <strong>Kenapa Frameset Deprecated?</strong><br>
+                • Sulit untuk SEO (search engine tidak suka frames)<br>
+                • Masalah bookmark (URL tidak berubah)<br>
+                • Tidak responsive untuk mobile<br>
+                • Sulit untuk print halaman<br>
+                • Masalah aksesibilitas untuk screen reader<br>
+                <br>
+                <strong>Alternatif Modern:</strong><br>
+                • Gunakan <code>&lt;iframe&gt;</code> untuk embed konten<br>
+                • Gunakan CSS Grid atau Flexbox untuk layout<br>
+                • Gunakan JavaScript frameworks (React, Vue, dll) untuk SPA
+            </div>
+        </section>
+    </div>
 
     <footer>
-      <small>Built for demo • Docker + Nginx</small>
+        <h3 style="color:#667eea; margin-bottom:1rem;">Lesgow belajar HTML RAWRRRRRR!!!</h3>
+        <p style="color:#666; margin-bottom:0.5rem;">Panduan ini mencakup semua elemen HTML dari dasar hingga kompleks.</p>
+        <p style="color:#666;">Made by Love - <i>Ghina Khairunnisa</i></p>
+        <hr style="margin:1.5rem 0; border:none; border-top:2px solid #ddd;">
+        <p style="color:#999; font-size:0.9rem;">&copy; 2025 HTML Learning | Dibuat untuk pembelajaran</p>
+        <p style="color:#999; font-size:0.9rem;">
+            <a href="#struktur" style="color:#667eea; text-decoration:none;">Kembali ke Atas ↑</a>
+        </p>
     </footer>
-  </body>
+</body>
 </html>
